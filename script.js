@@ -29,6 +29,9 @@ document.getElementById('shortenBtn').addEventListener('click', function() {
     const urlInput = document.getElementById('urlInput')
     const handle = document.getElementById('urlHandleInput')
 
+    document.getElementById('shortenBtn').disabled = true
+    document.getElementById('shortenBtn').classList.add('loading')
+
     if (!urlInput.value.startsWith("https://")) {
         urlInput.value = "https://" +urlInput.value
     }
@@ -59,6 +62,9 @@ document.getElementById('shortenBtn').addEventListener('click', function() {
             notif.querySelector('p').textContent = data.error
             notif.style.animation = "slide-down 0.3s cubic-bezier(0.1, 0.3, 0.5, 0.8)";
 
+            document.getElementById('shortenBtn').disabled = false
+            document.getElementById('shortenBtn').classList.remove('loading')
+
             document.querySelector('.wrapper').appendChild(notif)
 
             setTimeout(() => {
@@ -86,6 +92,9 @@ document.getElementById('shortenBtn').addEventListener('click', function() {
         notif.querySelector('h3').textContent = "Copied!"
         notif.querySelector('p').textContent = "We've copied the new link to your clipboard!"
         notif.style.animation = "slide-down 0.3s cubic-bezier(0.1, 0.3, 0.5, 0.8)";
+
+        document.getElementById('shortenBtn').disabled = false
+        document.getElementById('shortenBtn').classList.remove('loading')
 
         document.querySelector('.wrapper').appendChild(notif)
 

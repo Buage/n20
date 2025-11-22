@@ -242,6 +242,10 @@ body.dark .notif-img {
     filter: blur(7px);
 }
 
+.loading {
+    opacity: 0.7;
+}
+
 @media (max-width: 690px) {
     .main-content,
     .redirect-content,
