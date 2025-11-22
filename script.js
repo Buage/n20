@@ -40,7 +40,7 @@ document.getElementById('shortenBtn').addEventListener('click', function() {
         formData.append("handle", handle.value)
     }
 
-    fetch("http://192.168.1.150:7766/shorten.php", {
+    fetch("https://api.n20.me/shorten.php", {
         method: "POST",
         body: formData
     })
@@ -102,7 +102,7 @@ document.getElementById('shortenBtn').addEventListener('click', function() {
 });
 
 if (params.get('r')) {
-    fetch("http://192.168.1.150:7766/resolve.php?h=" + params.get('r'))
+    fetch("https://api.n20.me/resolve.php?h=" + params.get('r'))
     .then(res => res.json())
     .then(data => {
         document.querySelector('.main-content').style.display = "none"
@@ -140,7 +140,7 @@ if (params.get('s') === "1") {
     }
 
     if (getCookie('temp-key')) {
-        fetch("http://192.168.1.150:7766/resolve.php?s=" + getCookie('temp-key'))
+        fetch("https://api.n20.me/resolve.php?s=" + getCookie('temp-key'))
         .then(res => res.json())
         .then(data => {
             document.getElementById('linkClicks').textContent = data.clicks + " clicks"
@@ -173,7 +173,7 @@ document.getElementById('deleteBtn').addEventListener('click', function() {
     const fdata = new FormData()
     fdata.append('secretKey', getCookie('temp-key'))
 
-    fetch("http://192.168.1.150:7766/delete.php", {
+    fetch("https://api.n20.me/delete.php", {
         method: "POST",
         body: fdata
     })
