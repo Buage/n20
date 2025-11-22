@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n20 - URL Shortener</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="light">
+    <div class="wrapper">
+
+        <div class="notification hidden card">
+            <img src="https://buage.dev/files/Tor.png" class="notif-img">
+            <div>
+                <h3 class="notif-title">Title</h3>
+                <p class="notif-sub">Sub</p>
+            </div>
+        </div>
+
+        <div class="card main-content">
+            <div>
+                <h3>n20</h3>
+                <p>The safe URL shortener that doesn't collects all your data.</p>
+                <hr style="width: 100%; margin-top: 15px;">
+            </div>
+            <input type="text" name="url" id="urlInput" class="input1" placeholder="Enter an URL here..">
+            <input type="text" name="urlHandle" id="urlHandleInput" class="input1" placeholder="URL Handle (Optionnal)">
+            <button class="button" id="shortenBtn">Shorten it!</button>
+        </div>
+
+        <div class="card redirect-content" style="display: none;">
+            <div>
+                <h3>We will soon redriect you.</h3>
+                <p>You will be redirected to <a class="domain-to-redirect">https://example.com</a> in <a class="time-remaining">10</a> seconds. Make sure you trust this domain.</p>
+                <hr style="width: 100%; margin-top: 15px;">
+            </div>
+
+            <button class="button" id="redirectBtn">Redirect me now</button>
+        </div>
+
+        <div class="card stats-content" style="display: none;">
+            <div>
+                <h3>Statistics.</h3>
+                <p>Manage your link and see how much clicks did it make.</p>
+                <hr style="width: 100%; margin-top: 15px;">
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <svg class="stats-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                <p id="linkClicks">0 clicks</p>
+            </div>
+
+            <hr style="width: 100%;">
+
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
+                <h3 style="font-size: 15px;">View your secret key for this link.</h3>
+                <div class="secret-key blur7">
+                    <p class="secret-key-text">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+                </div>
+                <p>Do NOT share it with anyone, it can delete your link.</p>
+            </div>
+
+            <button class="button" id="deleteBtn">Delete the link</button>
+        </div>
+
+        <div class="views-card card">
+            <svg class="stats-svg" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                
+            <div class="header-meta">
+                <h3 class="header-views">0 views</h3>
+                <p>Total views my websites got</p>
+            </div>
+        </div>
+
+        <p style="position: absolute; bottom: 50px;">By using n20, you agree to our <a href="/tos/">ToS</a> and <a href="/privacy/">privacy policy</a>.</p>
+        <p onclick="window.open('https://buage.dev/')" style="position: absolute; bottom: 20px;">Proudly made in 🇫🇷 by <a style="color: var(----color-divider)" href="https://buage.dev/" target="_blank">Buage</a> with ❤️</p>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

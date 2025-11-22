@@ -1,0 +1,251 @@
+body.dark {
+    --color-text-main: #DCDCDC;
+    --color-text-secondary: #A6A6A6;
+    --color-bg-body: #0D0D0D;
+    --color-bg-card: #1A1A1A;
+    --color-border-card: #303030;
+    --color-shadow: #2525258c;
+    --color-divider: #ffffff21;
+    --color-button-bg: #FEFEFE;
+    --color-button-text: #0D0D0D;
+    --color-button-border: #C7C7C7;
+    --color-card-inside: #262626;
+}
+
+body {
+    --color-text-main: #010101;
+    --color-text-secondary: #8A8A8A;
+    --color-bg-body: #E5E5E5;
+    --color-bg-card: #F2F2F2;
+    --color-border-card: #CFCFCF;
+    --color-shadow: #D1D1D1;
+    --color-divider: #00000015;
+    --color-button-bg: #000000;
+    --color-button-text: #F8F8F8;
+    --color-button-border: #181818;
+    --color-card-inside: #FFFFFF;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    gap: 20px;
+}
+
+body {
+    transition: all 0.2s ease-in-out;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-size: 18px;
+    color: var(--color-text-main);
+}
+
+p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+body {
+    background-color: var(--color-bg-body);
+}
+
+.card {
+    padding: 30px;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border-card);
+    box-shadow: 1px 1px 5px var(--color-shadow);
+    border-radius: 3cap;
+}
+
+svg {
+    color: var(--color-text-main);
+}
+
+hr {
+    color: var(--color-text-main);
+    opacity: 0.3;
+}
+
+.padding20 {
+    padding: 20px;
+}
+
+.button {
+    background-color: var(--color-button-bg);
+    color: var(--color-button-text);
+    border: 1px solid var(--color-button-border);
+    box-shadow: 1px 1px 5px var(--color-bg-card);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.popup {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    z-index: 6;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.overlay {
+    z-index: 5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    display: none;
+}
+
+input {
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    outline: 1px solid var(--color-border-card);
+    background-color: var(--color-card-inside);
+    border: none;
+    text-indent: 10px;
+    color: var(--color-text-main)
+}
+
+a {
+    color: var(--color-button-border);
+}
+
+.border20 {
+    border-radius: 20px;
+}
+
+.button {
+    background-color: var(--color-button-bg);
+    color: var(--color-button-text);
+    border: 1px solid var(--color-button-border);
+    box-shadow: 1px 1px 5px var(--color-bg-card);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.views-card {
+    width: 450px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification {
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    position: absolute;
+    top: 20px;  
+}
+
+.notif-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+body.dark .notif-img {
+    filter: invert(1);
+}
+
+.notif-title {
+    font-size: 14.5px;
+}
+
+.notif-sub {
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes slide-down {
+    0%   { transform: translateY(-120%); opacity: 0; }
+    30%  { transform: translateY(-60%);  opacity: 1; }
+    60%  { transform: translateY(-10%);  opacity: 1; }
+    80%  { transform: translateY(2%);    opacity: 1; }
+    100% { transform: translateY(0);     opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.main-content,
+.redirect-content,
+.stats-content {
+    width: 450px;
+    height: 260px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.redirect-content {
+    height: 150px;
+}
+
+.stats-content {
+    height: 340px;
+}
+
+#deleteBtn {
+    height: 45px;
+    border-radius: 3cap;
+}
+
+.input1 {
+    width: 100%;
+}
+
+#shortenBtn,
+#redirectBtn {
+    height: 45px;
+    width: 100%;
+    border-radius: 3cap;
+}
+
+.alternative-handle {
+    color: var(--color-button-border);
+    text-decoration: underline;
+}
+
+.blur7 {
+    filter: blur(7px);
+}
+
+@media (max-width: 690px) {
+    .main-content,
+    .redirect-content,
+    .views-card {
+        max-width: 80%;
+    }
+}
