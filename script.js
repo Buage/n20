@@ -79,6 +79,7 @@ document.getElementById('shortenBtn').addEventListener('click', function() {
         }
 
         setCookie("temp-key", data.secretKey, 1)
+        setCookie("temp-original", encodeURIComponent(urlInput.value), 1)
 
         navigator.clipboard.writeText(data.short_url)
 
@@ -153,6 +154,8 @@ if (params.get('s') === "1") {
         .then(res => res.json())
         .then(data => {
             document.getElementById('linkClicks').textContent = data.clicks + " clicks"
+            document.getElementById('shortenedLink').textContent = data.short_url || "-"
+            document.getElementById('originalLink').textContent = data.resolved_url || decodeURIComponent(getCookie('temp-original')) || "-"
         });
 
         document.querySelector('.secret-key-text').textContent = "https://n20.me/?s=" + getCookie('temp-key')
@@ -172,6 +175,8 @@ if (params.get('s') === "1") {
         .then(res => res.json())
         .then(data => {
             document.getElementById('linkClicks').textContent = data.clicks + " clicks"
+            document.getElementById('shortenedLink').textContent = data.short_url || "-"
+            document.getElementById('originalLink').textContent = data.resolved_url || decodeURIComponent(getCookie('temp-original')) || "-"
         });
 
         document.querySelector('.secret-key-text').textContent = "https://n20.me/?s=" + getCookie('temp-key')
